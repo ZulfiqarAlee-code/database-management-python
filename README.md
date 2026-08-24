@@ -1,6 +1,8 @@
 # PostgreSQL Database Project with Python
 
-A simple Python project for creating and inserting data into a **PostgreSQL database**. This project demonstrates how Python can be used to connect with PostgreSQL and perform basic database operations.
+A simple Python project for creating and inserting data into a **PostgreSQL database** using **SQLAlchemy** and **psycopg2**.
+
+This project demonstrates how Python can connect to PostgreSQL, create database tables, and insert data.
 
 ## 📁 Project Files
 
@@ -14,118 +16,176 @@ python-database-manager/
 
 ### `create_database.py`
 
-This script connects to PostgreSQL and creates the required database/tables for the project.
+Creates the required tables and database structure using Python, SQLAlchemy, and PostgreSQL.
 
 ### `insertdata.py`
 
-This script connects to the PostgreSQL database and inserts data into the required tables.
+Inserts the required data into the PostgreSQL tables.
 
 ## 🛠️ Technologies Used
 
-* **Python**
-* **PostgreSQL**
-* **psycopg2** – Python PostgreSQL adapter
-* **SQL**
+* Python
+* PostgreSQL
+* SQLAlchemy
+* psycopg2
+* SQL
 
-## ⚙️ Requirements
+## ⚙️ Installation
 
-Before running the project, make sure you have:
+Make sure you have installed:
 
-* Python 3.x installed
-* PostgreSQL installed and running
-* A PostgreSQL database/user configured
-* `psycopg2` installed
+* Python 3.x
+* PostgreSQL
+* PowerShell
+* pip
 
-Install the PostgreSQL Python library with:
+Install the required Python packages:
 
-```bash
-pip install psycopg2-binary
+```powershell
+pip install sqlalchemy psycopg2-binary
 ```
 
-## 🚀 Getting Started
+## 🔗 Database Configuration
 
-### 1. Clone the repository
+The project uses the following PostgreSQL connection URL:
 
-```bash
-git clone https://github.com/your-username/python-database-manager.git
+```python
+DATABASE_URL = "postgresql+psycopg2://postgres:postgres@localhost:5432/urban_basket_python"
 ```
 
-### 2. Navigate to the project directory
+Connection details:
 
-```bash
-cd python-database-manager
-```
+| Setting       | Value                 |
+| ------------- | --------------------- |
+| Database      | PostgreSQL            |
+| Username      | `postgres`            |
+| Password      | `postgres`            |
+| Host          | `localhost`           |
+| Port          | `5432`                |
+| Database Name | `urban_basket_python` |
 
-### 3. Configure PostgreSQL
+> **Note:** The connection string above is for local development. Do not use or commit real production passwords in a public GitHub repository.
 
-Update the PostgreSQL connection details in the Python files according to your local PostgreSQL setup.
+## 🚀 How to Run the Project
+
+Follow the steps below in order.
+
+### Step 1: Create the PostgreSQL Database
+
+First, open **PowerShell** and enter PostgreSQL's database mode.
 
 For example:
 
-```python
-connection = psycopg2.connect(
-    host="localhost",
-    database="your_database",
-    user="your_username",
-    password="your_password"
-)
+```powershell
+psql -U postgres
 ```
 
-> **Important:** Do not upload your real PostgreSQL password or other sensitive credentials to GitHub.
+Enter your PostgreSQL password when prompted.
 
-### 4. Create the database
+You should then see the PostgreSQL prompt:
 
-Run:
+```text
+postgres=#
+```
 
-```bash
+Create the database:
+
+```sql
+CREATE DATABASE urban_basket_python;
+```
+
+You can verify that the database was created with:
+
+```sql
+\l
+```
+
+After confirming the database exists, exit PostgreSQL:
+
+```sql
+\q
+```
+
+### Step 2: Return to the Main PowerShell
+
+After exiting PostgreSQL database mode, you will return to your normal PowerShell.
+
+Navigate to the project directory:
+
+```powershell
+cd path\to\python-database-manager
+```
+
+### Step 3: Create the Database Tables
+
+Run the `create_database.py` file:
+
+```powershell
 python create_database.py
 ```
 
-### 5. Insert the data
+This script connects to the `urban_basket_python` PostgreSQL database using SQLAlchemy and creates the required tables.
 
-After the database and required tables have been created, run:
+### Step 4: Insert Data
 
-```bash
+After the tables have been created, run:
+
+```powershell
 python insertdata.py
 ```
+
+This script inserts the required data into the PostgreSQL tables.
 
 ## 🔄 Project Workflow
 
 ```text
-PostgreSQL
+PowerShell
     │
     ▼
-create_database.py
+PostgreSQL Database Mode
     │
     ▼
-Database & Tables Created
+CREATE DATABASE urban_basket_python;
     │
     ▼
-insertdata.py
+Exit PostgreSQL (\q)
     │
     ▼
-Data Inserted into PostgreSQL
+Main PowerShell
+    │
+    ▼
+python create_database.py
+    │
+    ▼
+Tables Created
+    │
+    ▼
+python insertdata.py
+    │
+    ▼
+Data Inserted
 ```
 
-## 🎯 Purpose
+## 🎯 Project Purpose
 
-The purpose of this project is to practice:
+This project was created to practice:
 
-* Connecting Python with PostgreSQL
-* Creating databases and tables
-* Executing SQL queries from Python
-* Inserting data into PostgreSQL
-* Working with database connections
-* Understanding basic database automation
+* Python and PostgreSQL integration
+* SQLAlchemy
+* psycopg2
+* PostgreSQL database management
+* Creating database tables
+* Inserting data
+* Running SQL/database operations from Python
 
 ## 🔐 Security
 
-Never commit database passwords, API keys, or other sensitive information to GitHub.
+For learning purposes, the project uses a local PostgreSQL username and password in the connection string.
 
-For a real project, consider using environment variables or a `.env` file for your PostgreSQL credentials.
+For a public or production project, it is recommended to use environment variables instead of storing database credentials directly in Python files.
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Zulfiqar Ali**
 
 If you found this project useful, feel free to ⭐ the repository.
