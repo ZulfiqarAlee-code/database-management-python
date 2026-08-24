@@ -50,7 +50,7 @@ pip install sqlalchemy psycopg2-binary
 The project uses the following PostgreSQL connection URL:
 
 ```python
-DATABASE_URL = "postgresql+psycopg2://postgres:postgres@localhost:5432/urban_basket_python"
+DATABASE_URL = "postgresql+psycopg2://user_name:Password@localhost:5432/urban_basket_python"
 ```
 
 Connection details:
@@ -58,10 +58,11 @@ Connection details:
 | Setting       | Value                 |
 | ------------- | --------------------- |
 | Database      | PostgreSQL            |
-| Username      | `postgres`            |
-| Password      | `postgres`            |
+| User_name      | `Your_username`      |
+| Password      | `Your_password`       |
 | Host          | `localhost`           |
-| Port          | `5432`                |
+| Port          | `your_port_number
+`                |
 | Database Name | `urban_basket_python` |
 
 > **Note:** The connection string above is for local development. Do not use or commit real production passwords in a public GitHub repository.
