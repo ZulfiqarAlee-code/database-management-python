@@ -1,0 +1,26 @@
+product_id,product_name,category,unit_price
+1,Bananas (1kg),Produce,180
+2,Red Apples (1kg),Produce,320
+3,Tomatoes (1kg),Produce,140
+4,Potatoes (2kg),Produce,160
+5,Spinach Bunch,Produce,90
+6,Carrots (1kg),Produce,150
+7,Full Cream Milk 1L,Dairy & Eggs,210
+8,Farm Eggs (Dozen),Dairy & Eggs,340
+9,Cheddar Cheese 200g,Dairy & Eggs,480
+10,Greek Yogurt 500g,Dairy & Eggs,390
+11,Whole Wheat Bread,Bakery,160
+12,White Sandwich Bread,Bakery,150
+13,Butter Croissant (Pack of 4),Bakery,420
+14,Chocolate Muffin (Pack of 6),Bakery,480
+15,Orange Juice 1L,Beverages,280
+16,Mineral Water 1.5L,Beverages,90
+17,Green Tea Box (25 bags),Beverages,350
+18,Instant Coffee 200g,Beverages,890
+19,Potato Chips 150g,Snacks,180
+20,Mixed Nuts 250g,Snacks,650
+21,Chocolate Cookies 300g,Snacks,320
+22,Granola Bars (Pack of 6),Snacks,540
+23,Dish Soap 500ml,Household,220
+24,Paper Towels (2 rolls),Household,260
+25,Laundry Detergent 1kg,Household,540
